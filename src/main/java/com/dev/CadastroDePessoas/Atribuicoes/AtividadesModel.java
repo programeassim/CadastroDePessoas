@@ -2,11 +2,17 @@ package com.dev.CadastroDePessoas.Atribuicoes;
 
 import com.dev.CadastroDePessoas.Pessoas.PessoaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_atividades")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AtividadesModel {
 
     @Id
