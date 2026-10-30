@@ -1,6 +1,9 @@
-package com.dev.CadastroDePessoas;
+package com.dev.CadastroDePessoas.Pessoas;
 
+import com.dev.CadastroDePessoas.Atribuicoes.AtividadesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //Entity transforma uma classe em uma entidade do BD
 @Entity
@@ -13,6 +16,11 @@ public class PessoaModel {
     private String nome;
     private String email;
     private int idade;
+
+    //  @ManyToOne uma pessoa tem uma unica atividade
+    @ManyToOne
+    @JoinColumn(name = "atividades_id") //Foreing Key ou chave estrangeira
+    private AtividadesModel atividades;
 
     public PessoaModel() {
     }
