@@ -1,4 +1,4 @@
 package com.dev.CadastroDePessoas.Pessoas;
 
-public class PessoaRepository {
+public interface PessoaRepository {
 }
