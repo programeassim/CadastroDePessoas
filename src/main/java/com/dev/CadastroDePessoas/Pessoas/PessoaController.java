@@ -2,8 +2,9 @@ package com.dev.CadastroDePessoas.Pessoas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/pessoa")
 public class PessoaController {
+
     @GetMapping("/boasVindas")
     public String boasVindas() {
         return "Essa é minha primeira mensagem nessa rota";
@@ -16,13 +17,13 @@ public class PessoaController {
 
 
         //Procura pessoa por ID (CREATE)
-        @GetMapping("/todos")
+        @GetMapping("/listar")
         public  String mostrarTodasAsPessoas() {
             return "Mostra todas as pessoas";
         }
 
-        //Mostrar todas as pessoas (READ)
-            @GetMapping("/todosID")
+        //Mostrar todas as pessoas por id (READ)
+            @GetMapping("/listarID")
             public  String mostrarTodasAsPessoasPorId() {
                 return "Mostra todas as pessoas por ID";
             }
