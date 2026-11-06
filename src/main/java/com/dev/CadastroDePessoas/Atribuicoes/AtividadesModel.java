@@ -1,6 +1,7 @@
 package com.dev.CadastroDePessoas.Atribuicoes;
 
 import com.dev.CadastroDePessoas.Pessoas.PessoaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,5 +26,6 @@ public class AtividadesModel {
 
     //@OneToMany uma atividade pode ter varias pessoas
     @OneToMany(mappedBy = "atividades")
+    @JsonIgnore
     private List<PessoaModel> pessoas;
 }
