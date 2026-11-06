@@ -31,9 +31,9 @@ public class PessoaController {
             }
 
     //Mostrar todas as pessoas por id (READ)
-    @GetMapping("/listarPessoasPorId")
-    public List<PessoaModel> listarPessoasPorId() {
-        return "Listar por id";
+    @GetMapping("/listar/{id}")
+    public PessoaModel listarPessoasPorId(@PathVariable Long id) {
+        return pessoaService.listarPessoasPorId(id);
     }
 
         //Altarar dados Pessoas (UPDATE)
