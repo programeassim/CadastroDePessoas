@@ -1,9 +1,17 @@
 package com.dev.CadastroDePessoas.Pessoas;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/pessoa")
+@RequestMapping("/pessoas")
 public class PessoaController {
+
+    private PessoaService pessoaService;
+
+    public PessoaController(PessoaService pessoaService) {
+        this.pessoaService = pessoaService;
+    }
 
     @GetMapping("/boasVindas")
     public String boasVindas() {
@@ -16,17 +24,17 @@ public class PessoaController {
         }
 
 
-        //Procura pessoa por ID (CREATE)
-        @GetMapping("/listar")
-        public  String mostrarTodasAsPessoas() {
-            return "Mostra todas as pessoas";
-        }
-
-        //Mostrar todas as pessoas por id (READ)
-            @GetMapping("/listarID")
-            public  String mostrarTodasAsPessoasPorId() {
-                return "Mostra todas as pessoas por ID";
+        //Mostrar todas as pessoas (READ)
+            @GetMapping("/listarPessoas")
+            public List<PessoaModel> listarPessoas() {
+                return pessoaService.listarPessoas();
             }
+
+    //Mostrar todas as pessoas por id (READ)
+    @GetMapping("/listarPessoasPorId")
+    public List<PessoaModel> listarPessoasPorId() {
+        return "Listar por id";
+    }
 
         //Altarar dados Pessoas (UPDATE)
 
